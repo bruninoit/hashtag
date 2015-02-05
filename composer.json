@@ -1,0 +1,31 @@
+{
+"name": "bruninoit/hashtag",
+"type": "phpbb-extension",
+"description": "It allows users to use #hashtag in the topics",
+"homepage": "https://github.com/bruninoit/hashtag",
+"version": "0.1.0-a1",
+"time": "2015-02-09",
+"license": "GPL-2.0",
+"authors": [
+{
+"name": "brunino",
+"email": "brunino@altervista.org",
+"homepage": "http://www.brunino.altervista.org",
+"role": "Developer"
+}
+],
+"require": {
+"php": ">=5.3"
+},
+"extra": {
+"display-name": "HashTag",
+"soft-require": {
+"phpbb/phpbb": "3.1.*@dev"
+},
+"version-check": {
+"host": "brunino.altervista.org",
+"directory": "/version/",
+"filename": "hashtag.json"
+}
+}
+}
