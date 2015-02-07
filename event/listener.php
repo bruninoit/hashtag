@@ -1,12 +1,12 @@
 <?php
 /** 
 * 
-* @package StaffIt - Toic List 
+* @package Bruninoit - HashTag 
 * @copyright (c) 2014 brunino
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2 
 * 
 */ 
-namespace bruninoit\socialtopics\event;
+namespace bruninoit\hashtag\event;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 class listener implements EventSubscriberInterface
 {
@@ -23,7 +23,7 @@ class listener implements EventSubscriberInterface
 	protected $root_path;
 	
 	protected $phpEx;
-	protected $notification_manager;
+	
 /** 
  	* Constructor 
  	* 
@@ -37,7 +37,7 @@ class listener implements EventSubscriberInterface
  	* @return \staffit\toptentopics\event\listener 
  	* @access public 
  	*/ 
-public function __construct(\phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, \phpbb\template\template $template, \phpbb\auth\auth $auth, \phpbb\user $user, $root_path, $phpEx, \phpbb\notification\manager $notification_manager) 
+public function __construct(\phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, \phpbb\template\template $template, \phpbb\auth\auth $auth, \phpbb\user $user, $root_path, $phpEx) 
 {
    $this->config = $config;
    $this->db = $db;
@@ -46,7 +46,6 @@ public function __construct(\phpbb\config\config $config, \phpbb\db\driver\drive
    $this->user = $user;
    $this->root_path = $root_path;
    $this->phpEx   = $phpEx ;
-   $this->notification_manager = $notification_manager;
 }
 /** 
  	* Assign functions defined in this class to event listeners in the core 
