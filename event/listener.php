@@ -84,6 +84,7 @@ public function viewtopic_add($event)
 $rowmessage=$event['post_row'];
 $message=$rowmessage['MESSAGE'];
 $post_id=$rowmessage['POST_ID'];
+$message=str_replace("&#","[&&]",$message);
 $message=str_replace("#","[ht]",$message);
 //hastag
 preg_match_all("(\[ht\](.*?) )", $message, $matches);
@@ -93,6 +94,7 @@ $ht_testo=$matches[1][$n];
 $message=str_replace("[ht]$ht_testo","<a href=\"{$this->root_path}search.{$this->phpEx}?keywords=%23$ht_testo&sc=1&sf=%23$ht_testo&sr=posts&sk=t&sd=d&st=0&ch=300&t=0&submit=Cerca\">#$ht_testo</a>",$message);
 }
 $message=str_replace("[ht]","#",$message);
+$message=str_replace("[&&]","&#",$message);
 $rowmessage['MESSAGE']=$message;
 $event['post_row'] = $rowmessage;
 }
